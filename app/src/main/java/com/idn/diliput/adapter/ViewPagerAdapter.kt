@@ -7,8 +7,8 @@ import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.idn.diliput.ui.fragment.FirstFragment
 import com.idn.diliput.ui.fragment.SecondFragment
 
-class ViewPagerAdapter(fragmentManager: FragmentManager,lifecycle: Lifecycle)
-    : FragmentStateAdapter(fragmentManager,lifecycle) {
+class ViewPagerAdapter(fragment: Fragment)
+    : FragmentStateAdapter(fragment) {
     override fun getItemCount(): Int = 2
 
     override fun createFragment(position: Int): Fragment {
