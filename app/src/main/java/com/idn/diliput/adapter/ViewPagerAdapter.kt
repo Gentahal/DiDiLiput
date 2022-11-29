@@ -4,8 +4,8 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.Lifecycle
 import androidx.viewpager2.adapter.FragmentStateAdapter
-import com.idn.diliput.ui.FirstFragment
-import com.idn.diliput.ui.SecondFragment
+import com.idn.diliput.ui.fragment.FirstFragment
+import com.idn.diliput.ui.fragment.SecondFragment
 
 class ViewPagerAdapter(fragmentManager: FragmentManager,lifecycle: Lifecycle)
     : FragmentStateAdapter(fragmentManager,lifecycle) {
