@@ -9,5 +9,8 @@
     <color name="white">#FFFFFFFF</color>
 
     <color name="primary">#FF4E00</color>
-    <color name="background">#252525</color>
+    <color name="background">#202020</color>
+    <color name="text">#E2E3E2</color>
+    <color name="text_secondary">#B2B3B2</color>
+    <color name="card">#252525</color>
 </resources>
