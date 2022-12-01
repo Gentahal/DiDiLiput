@@ -5,7 +5,7 @@ import com.google.gson.annotations.SerializedName
 import kotlinx.android.parcel.Parcelize
 
 @Parcelize
-data class DataResponseItem(
+data class DataResponse(
 
 	@field:SerializedName("totalResults")
 	val totalResults: Int? = null,
@@ -15,16 +15,6 @@ data class DataResponseItem(
 
 	@field:SerializedName("status")
 	val status: String? = null
-) : Parcelable
-
-@Parcelize
-data class Source(
-
-	@field:SerializedName("name")
-	val name: String? = null,
-
-	@field:SerializedName("id")
-	val id: String? = null
 ) : Parcelable
 
 @Parcelize
@@ -53,4 +43,14 @@ data class ArticlesItem(
 
 	@field:SerializedName("content")
 	val content: String? = null
+) : Parcelable
+
+@Parcelize
+data class Source(
+
+	@field:SerializedName("name")
+	val name: String? = null,
+
+	@field:SerializedName("id")
+	val id: String? = null
 ) : Parcelable

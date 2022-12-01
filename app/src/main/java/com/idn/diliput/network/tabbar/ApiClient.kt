@@ -1,4 +1,4 @@
-package com.idn.diliput.network
+package com.idn.diliput.network.tabbar
 
 import androidx.viewbinding.BuildConfig
 import okhttp3.OkHttpClient
@@ -33,7 +33,7 @@ class ApiClient {
             .build()
 
         return Retrofit.Builder()
-            .baseUrl("https://newsapi.org/v2/")
+            .baseUrl("https://newsapi.org/v2")
             .addConverterFactory(GsonConverterFactory.create())
             .addCallAdapterFactory(RxJava3CallAdapterFactory.create())
             .client(okHttpClient)
