@@ -6,19 +6,24 @@
     <Transition
         motion:constraintSetEnd="@+id/end"
         motion:constraintSetStart="@id/start"
-        motion:duration="3000">
+        motion:duration="5000">
        <KeyFrameSet>
-<!--           <KeyAttribute-->
-<!--               motion:framePosition="0"-->
-<!--               motion:motionTarget="@id/logo"-->
-<!--               android:scaleY="1"-->
-<!--               android:scaleX="100"/>-->
-<!--           <KeyAttribute-->
-<!--               motion:framePosition="100"-->
-<!--               motion:motionTarget="@id/logo"-->
-<!--               android:scaleY="1.0"-->
-<!--               android:scaleX="1.0"/>-->
+           <KeyAttribute
+               motion:framePosition="0"
+               motion:motionTarget="@id/dlogo"
+               android:scaleY="100"
+               android:scaleX="100"/>
 
+           <KeyAttribute
+               motion:framePosition="50"
+               motion:motionTarget="@id/dlogo"
+               android:scaleY="2.0"
+               android:scaleX="2.0"/>
+
+           <KeyAttribute
+               motion:framePosition="60"
+               motion:motionTarget="@id/textlogo"
+               android:alpha="0.0"/>
        </KeyFrameSet>
     </Transition>
 
@@ -37,7 +42,6 @@
             android:layout_height="wrap_content"
             android:alpha="0.0"
             motion:layout_constraintStart_toStartOf="parent"
-            motion:layout_constraintEnd_toEndOf="parent"
             motion:layout_constraintBottom_toBottomOf="parent"
             motion:layout_constraintTop_toTopOf="parent"/>
     </ConstraintSet>
@@ -48,13 +52,15 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             motion:layout_constraintStart_toStartOf="parent"
-            motion:layout_constraintEnd_toStartOf="@+id/textlogo"
+            motion:layout_constraintEnd_toStartOf="@id/textlogo"
             motion:layout_constraintBottom_toBottomOf="parent"
-            motion:layout_constraintTop_toTopOf="parent"/>
+            motion:layout_constraintTop_toTopOf="parent"
+            android:layout_marginStart="100dp"/>
         <Constraint
             android:id="@+id/textlogo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="120dp"
             android:alpha="1.0"
             motion:layout_constraintStart_toEndOf="@+id/dlogo"
             motion:layout_constraintEnd_toEndOf="parent"
