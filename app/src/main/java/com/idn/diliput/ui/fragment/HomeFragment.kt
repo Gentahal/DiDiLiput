@@ -33,8 +33,12 @@ class HomeFragment : Fragment() {
 
             TabLayoutMediator(tabLayout, viewPager) { tab, position ->
                 when(position) {
-                    0 -> tab.text = "Tab Pertama"
-                    1 -> tab.text = "Tab Kedua"
+                    0 -> tab.text = "Entertaiment"
+                    1 -> tab.text = "Sports"
+                    2 -> tab.text = "Bussiness"
+                    3 -> tab.text = "Health"
+                    4 -> tab.text = "Technology"
+                    5 -> tab.text = "Science"
                 }
             }.attach()
         }
