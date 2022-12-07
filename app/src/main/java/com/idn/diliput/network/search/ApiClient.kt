@@ -33,7 +33,7 @@ class ApiClient {
             .build()
 
         return Retrofit.Builder()
-            .baseUrl("https://newsdata.io/api/1")
+            .baseUrl("https://newsdata.io/api/1/")
             .addConverterFactory(GsonConverterFactory.create())
             .addCallAdapterFactory(RxJava3CallAdapterFactory.create())
             .client(okHttpClient)

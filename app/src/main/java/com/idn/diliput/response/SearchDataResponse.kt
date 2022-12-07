@@ -2,7 +2,7 @@ package com.idn.diliput.response
 
 import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
-import kotlinx.android.parcel.Parcelize
+import kotlinx.parcelize.Parcelize
 
 @Parcelize
 data class SearchDataResponse(
@@ -14,7 +14,7 @@ data class SearchDataResponse(
 	val nextPage: Int? = null,
 
 	@field:SerializedName("results")
-	val results: List<ResultsItem?>? = null,
+	val results: List<ResultsItem>? = null,
 
 	@field:SerializedName("status")
 	val status: String? = null
@@ -30,7 +30,7 @@ data class ResultsItem(
 	val creator: String? = null,
 
 	@field:SerializedName("keywords")
-	val keywords: String? = null,
+	val keywords: List<String>? = null,
 
 	@field:SerializedName("image_url")
 	val imageUrl: String? = null,

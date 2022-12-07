@@ -23,7 +23,7 @@ class SearchViewModel : ViewModel() {
 
         ApiClient().getApiService().getSearchNews(searchName).subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread()).subscribe({
-                responseHandlerNews(it)
+                responseHandlerNews(it.results as List<ResultsItem>)
             }, {
                 error(it)
             })
