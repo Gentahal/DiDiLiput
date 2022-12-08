@@ -8,24 +8,24 @@
         motion:constraintSetStart="@id/start"
         motion:duration="5000"
         motion:autoTransition="animateToEnd">
-       <KeyFrameSet>
-           <KeyAttribute
-               motion:framePosition="0"
-               motion:motionTarget="@id/dlogo"
-               android:scaleY="100"
-               android:scaleX="100"/>
+        <KeyFrameSet>
+            <KeyAttribute
+                motion:framePosition="0"
+                motion:motionTarget="@id/dlogo"
+                android:scaleY="100"
+                android:scaleX="100"/>
 
-           <KeyAttribute
-               motion:framePosition="50"
-               motion:motionTarget="@id/dlogo"
-               android:scaleY="2.0"
-               android:scaleX="2.0"/>
+            <KeyAttribute
+                motion:framePosition="50"
+                motion:motionTarget="@id/dlogo"
+                android:scaleY="2.0"
+                android:scaleX="2.0"/>
 
-           <KeyAttribute
-               motion:framePosition="60"
-               motion:motionTarget="@id/textlogo"
-               android:alpha="0.0"/>
-       </KeyFrameSet>
+            <KeyAttribute
+                motion:framePosition="60"
+                motion:motionTarget="@id/textlogo"
+                android:alpha="0.0"/>
+        </KeyFrameSet>
     </Transition>
 
     <ConstraintSet android:id="@+id/start">

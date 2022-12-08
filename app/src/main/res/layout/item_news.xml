@@ -1,40 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="120dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_marginHorizontal="15dp"
-    android:layout_marginVertical="20dp"
-    app:cardBackgroundColor="@color/card"
-    app:cardCornerRadius="20dp">
+    android:layout_marginVertical="15dp"
+    android:padding="10dp"
+    android:background="@drawable/bg_item">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:padding="10dp">
-
-        <ImageView
-            android:id="@+id/item_img"
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card_img"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:scaleType="centerCrop"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            tools:src="@tools:sample/avatars"/>
+            app:cardCornerRadius="10dp">
+            <ImageView
+                android:id="@+id/item_img"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                tools:src="@tools:sample/avatars"
+                android:contentDescription="@string/news_image"/>
+        </com.google.android.material.card.MaterialCardView>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/item_source"
-            android:textColor="@color/primary"
-            android:textSize="13sp"
+            android:textColor="@color/blue_800"
+            android:textSize="14sp"
             tools:text="cnn.com"
-            app:layout_constraintStart_toEndOf="@id/item_img"
+            app:layout_constraintStart_toEndOf="@id/card_img"
             app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginStart="10dp"
-            />
+            android:layout_marginStart="10dp"/>
 
         <TextView
             android:id="@+id/item_title"
@@ -42,14 +43,12 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:ellipsize="end"
-            android:maxLines="3"
-            android:textColor="@color/text"
-            android:textSize="15sp"
-            android:justificationMode="inter_word"
+            android:maxLines="2"
+            android:textColor="@color/grey_dark_primary"
+            android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/item_img"
-            app:layout_constraintTop_toBottomOf="@id/item_source"
+            app:layout_constraintStart_toEndOf="@id/card_img"
+            app:layout_constraintTop_toTopOf="parent"
             tools:text="@tools:sample/lorem/random" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</com.google.android.material.card.MaterialCardView>
+</androidx.constraintlayout.widget.ConstraintLayout>

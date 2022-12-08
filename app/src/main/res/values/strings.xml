@@ -7,4 +7,11 @@
     <string name="detail_image">Detail image</string>
     <string name="by">By</string>
     <string name="bookmark_image">bookmark image</string>
+    <string name="favourite">Favourite</string>
+    <string name="save">Save</string>
+    <string name="share">share</string>
+    <string name="news_image">news image</string>
+    <string name="d_logo">D Logo</string>
+    <string name="logo">logo</string>
+    <string name="Tabbar">Tabbar Home</string>
 </resources>

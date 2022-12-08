@@ -9,8 +9,20 @@
     <color name="white">#FFFFFFFF</color>
 
     <color name="primary">#FF4E00</color>
-    <color name="background">#202020</color>
-    <color name="text">#E2E3E2</color>
-    <color name="text_secondary">#B2B3B2</color>
+    <color name="secondary">#384854</color>
+    <color name="background">#151515</color>
+    <color name="text">#FFFFFFFF</color>
+    <color name="text_secondary">#B5B5B5</color>
     <color name="card">#252525</color>
+
+
+    <!--    Theme color-->
+    <color name="grey_100">#F4F2EF</color>
+    <color name="grey_300">#DBD9D6</color>
+    <color name="grey_400">#B3B3AF</color>
+    <color name="grey_dark_primary">#1c1b19</color>
+    <color name="body_text">#5C5A57</color>
+    <color name="secondary_text">#BABABA</color>
+    <color name="blue_800">#344955</color>
+
 </resources>

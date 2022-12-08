@@ -1,19 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="380dp"
     android:layout_height="300dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_marginVertical="20dp"
     android:layout_marginHorizontal="15dp"
-    app:cardCornerRadius="20dp"
-    app:cardBackgroundColor="@color/card"
-    app:cardElevation="10dp">
+    android:background="@drawable/bg_item"
+    app:cardElevation="10dp"
+    android:padding="15dp">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:padding="15dp">
 
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/img_card"
@@ -32,13 +28,12 @@
                 android:contentDescription="@string/bookmark_image" />
         </com.google.android.material.card.MaterialCardView>
 
-
         <TextView
             android:id="@+id/fav_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             tools:text="@tools:sample/lorem/random"
-            android:textColor="@color/text"
+            android:textColor="@color/grey_dark_primary"
             android:textSize="18sp"
             android:textStyle="bold"
             android:maxLines="2"
@@ -51,9 +46,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             tools:text="cnn.com"
-            android:textColor="@color/primary"
+            android:textColor="@color/blue_800"
             android:textSize="15sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"/>
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</com.google.android.material.card.MaterialCardView>
+</androidx.constraintlayout.widget.ConstraintLayout>

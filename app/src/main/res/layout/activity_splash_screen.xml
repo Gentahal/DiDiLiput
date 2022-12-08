@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background"
+    android:background="@color/blue_800"
     app:layoutDescription="@xml/activity_splash_screen_scene"
     tools:context=".ui.activity.SplashScreen">
 
@@ -12,13 +12,14 @@
         android:id="@+id/dlogo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/dlogo"/>
+        app:srcCompat="@drawable/dlogo"
+        android:contentDescription="@string/d_logo" />
 
     <ImageView
         android:id="@+id/textlogo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/textlogo"
-        android:contentDescription="TODO" />
+        android:contentDescription="@string/logo"
+        app:srcCompat="@drawable/textlogo" />
 
 </androidx.constraintlayout.motion.widget.MotionLayout>
