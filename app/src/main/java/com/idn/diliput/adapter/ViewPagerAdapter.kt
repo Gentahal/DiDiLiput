@@ -13,12 +13,12 @@ class ViewPagerAdapter(fragment: Fragment)
     override fun createFragment(position: Int): Fragment {
         var fragment = Fragment()
         when(position) {
-            0 -> fragment = FirstFragment()
-            1 -> fragment = SecondFragment()
-            2 -> fragment = ThirdFragment()
-            3 -> fragment = FourFragment()
-            4 -> fragment = FiveFragment()
-            5 -> fragment = SixFragment()
+            0 -> fragment = FirstFragment("general")
+            1 -> fragment = FirstFragment("sports")
+            2 -> fragment = FirstFragment("business")
+            3 -> fragment = FirstFragment("health")
+            4 -> fragment = FirstFragment("technology")
+            5 -> fragment = FirstFragment("science")
         }
         return fragment
     }
