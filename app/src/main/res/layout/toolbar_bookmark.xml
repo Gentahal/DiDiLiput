@@ -11,5 +11,5 @@
         android:textSize="20sp"
         android:text="@string/favourite"
         android:textStyle="bold"
-        android:textColor="@color/text"/>
+        android:textColor="@color/grey_dark_primary"/>
 </androidx.appcompat.widget.LinearLayoutCompat>
