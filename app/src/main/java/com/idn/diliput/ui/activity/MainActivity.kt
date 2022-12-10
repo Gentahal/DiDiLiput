@@ -2,6 +2,8 @@ package com.idn.diliput.ui.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
+import androidx.appcompat.widget.SearchView
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
@@ -11,6 +13,7 @@ import com.google.android.material.tabs.TabLayoutMediator
 import com.idn.diliput.R
 import com.idn.diliput.adapter.ViewPagerAdapter
 import com.idn.diliput.databinding.ActivityMainBinding
+import com.idn.diliput.ui.fragment.FirstFragment
 
 class MainActivity : AppCompatActivity() {
 

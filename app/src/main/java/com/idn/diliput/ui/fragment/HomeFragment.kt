@@ -1,12 +1,15 @@
 package com.idn.diliput.ui.fragment
 
 import android.os.Bundle
+import android.view.*
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import androidx.appcompat.widget.SearchView
+import androidx.appcompat.widget.SearchView.OnQueryTextListener
+import androidx.core.view.MenuItemCompat
+import androidx.core.view.get
 import androidx.lifecycle.Lifecycle
 import com.google.android.material.tabs.TabLayoutMediator
+import com.idn.diliput.R
 import com.idn.diliput.adapter.ViewPagerAdapter
 import com.idn.diliput.databinding.FragmentHomeBinding
 
@@ -14,7 +17,13 @@ class HomeFragment : Fragment() {
 
     private var _binding : FragmentHomeBinding? = null
     private val binding get() = _binding as FragmentHomeBinding
+
     private lateinit var viewPagerAdapter : ViewPagerAdapter
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setHasOptionsMenu(true)
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -26,8 +35,8 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         viewPagerAdapter = ViewPagerAdapter(this)
-        
 
         with(binding){
             viewPager.adapter = viewPagerAdapter
@@ -45,6 +54,8 @@ class HomeFragment : Fragment() {
             }.attach()
         }
     }
+
+
 
     override fun onDestroyView() {
         super.onDestroyView()

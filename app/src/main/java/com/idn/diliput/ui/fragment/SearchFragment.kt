@@ -37,17 +37,20 @@ class SearchFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         binding.searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
-                query.let {
-                    viewModel.apply {
-                        getDataSearch(query)
-                        dataResponse.observe(viewLifecycleOwner) { showData(it as ArrayList<ResultsItem>) }
-                        isError.observe(viewLifecycleOwner) { showError(it) }
-                    }
-                }
+                viewModel.getDataSearch(query)
+
                 return false
             }
 
             override fun onQueryTextChange(newText: String?): Boolean {
+
+                newText.let {
+                    viewModel.apply {
+                        getDataSearch(newText)
+                        dataResponse.observe(viewLifecycleOwner) { showData(it as ArrayList<ResultsItem>) }
+                        isError.observe(viewLifecycleOwner) { showError(it) }
+                    }
+                }
                 return false
             }
         })

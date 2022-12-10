@@ -1,15 +1,14 @@
 package com.idn.diliput.adapter
 
-import android.net.Uri
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.idn.diliput.R
 import com.idn.diliput.databinding.ItemNewsBinding
-import com.idn.diliput.response.ArticlesItem
 import com.idn.diliput.response.ResultsItem
+import com.idn.diliput.ui.activity.DetailActivity
 import com.squareup.picasso.Picasso
-import retrofit2.http.Url
 
 class SearchAdapter(private val listNews: ArrayList<ResultsItem>) :
     RecyclerView.Adapter<SearchAdapter.MyViewHolder>() {
@@ -23,9 +22,9 @@ class SearchAdapter(private val listNews: ArrayList<ResultsItem>) :
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         holder.binding.apply {
             if (listNews[position].creator == null) {
-                itemSource.text = "unknow"
+                itemSource.text = "unknown"
             } else {
-                itemSource.text = listNews[position].creator
+                itemSource.text = listNews[position].creator.toString()
             }
             itemTitle.text = listNews[position].title
 
@@ -34,6 +33,12 @@ class SearchAdapter(private val listNews: ArrayList<ResultsItem>) :
             } else {
                 Picasso.get().load(listNews[position].imageUrl).into(itemImg)
             }
+        }
+
+        holder.itemView.setOnClickListener {
+            val intent = Intent(it.context, DetailActivity::class.java)
+            intent.putExtra(DetailActivity.NEWS_DATA, listNews[position])
+            it.context.startActivity(intent)
         }
 
     }

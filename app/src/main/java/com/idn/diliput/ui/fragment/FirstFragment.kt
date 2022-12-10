@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.widget.SearchView
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
@@ -22,8 +23,6 @@ class FirstFragment(val category: String) : Fragment() {
 
     private var _viewModel : TabBarViewModel? = null
     private val viewModel get() = _viewModel as TabBarViewModel
-
-
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -42,6 +41,8 @@ class FirstFragment(val category: String) : Fragment() {
             isError.observe(viewLifecycleOwner) {showError(it)}
         }
     }
+
+
 
 
     private fun showError(error: Throwable?) {

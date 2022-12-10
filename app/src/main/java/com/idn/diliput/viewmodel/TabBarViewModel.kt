@@ -19,7 +19,7 @@ class TabBarViewModel : ViewModel() {
         responHandler: (List<ArticlesItem>) -> Unit,
         errorHandler: (Throwable) -> Unit
     ) {
-        ApiClient().getApiService().getTopHeadLines(searchHeadLine, ).subscribeOn(Schedulers.io())
+        ApiClient().getApiService().getTopHeadLines(searchHeadLine).subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread()).subscribe({
                 responHandler(it.articles as List<ArticlesItem>)
             },{
