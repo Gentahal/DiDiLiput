@@ -33,10 +33,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             tools:text="@tools:sample/lorem/random"
-            android:textColor="@color/grey_dark_primary"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:maxLines="2"
+            android:theme="@style/textAppearanceCardTitle"
             android:ellipsize="end"
             app:layout_constraintTop_toBottomOf="@id/img_card"
             app:layout_constraintBottom_toBottomOf="parent"/>
@@ -46,8 +43,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             tools:text="cnn.com"
-            android:textColor="@color/blue_800"
-            android:textSize="15sp"
+            android:theme="@style/textAppearanceCardSource"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

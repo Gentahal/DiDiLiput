@@ -21,23 +21,20 @@
             app:layout_scrollFlags="scroll|enterAlways"
             app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
             android:background="@color/grey_100"
-            app:titleTextColor="@color/blue_800" />
+            app:titleTextColor="@color/blue_800"
+            app:menu="@menu/topbar_home"/>
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tab_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/grey_100"
+            android:contentDescription="@string/Tabbar"
+            app:tabContentStart="20dp"
+            app:tabIndicatorColor="@color/blue_800"
+            app:tabMode="scrollable"
+            app:tabSelectedTextColor="@color/grey_dark_primary"
+            app:tabTextColor="@color/secondary_text" />
     </com.google.android.material.appbar.AppBarLayout>
-
-    <com.google.android.material.tabs.TabLayout
-        android:id="@+id/tab_layout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/grey_100"
-        android:contentDescription="@string/Tabbar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/appBarLayout"
-        app:tabContentStart="20dp"
-        app:tabIndicatorColor="@color/blue_800"
-        app:tabMode="scrollable"
-        app:tabSelectedTextColor="@color/grey_dark_primary"
-        app:tabTextColor="@color/secondary_text" />
 
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/view_pager"
@@ -46,5 +43,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tab_layout"/>
+        app:layout_constraintTop_toBottomOf="@id/appBarLayout"
+        android:layout_marginBottom="60dp"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

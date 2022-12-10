@@ -31,8 +31,6 @@ class SearchFragment : Fragment() {
         _viewModel = ViewModelProvider(this)[SearchViewModel::class.java]
         _binding = FragmentSearchBinding.inflate(inflater, container, false)
         return binding.root
-
-
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

@@ -8,86 +8,40 @@
     tools:context=".ui.activity.DetailActivity"
     android:fitsSystemWindows="true">
     <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/appbar_layout"
-        android:fitsSystemWindows="true">
-
-        <com.google.android.material.appbar.CollapsingToolbarLayout
-            android:id="@+id/collapsing_toolbar"
+        android:background="@color/grey_100"
+        app:liftOnScroll="true"
+        app:liftOnScrollTargetViewId="@id/rv_bookmark">
+        <com.google.android.material.appbar.MaterialToolbar
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fitsSystemWindows="true"
-            app:collapsedTitleTextAppearance="@style/CollapsedBarTextStyle"
-            app:expandedTitleTextAppearance="@style/ExpandedBarTextStyle"
-            app:layout_scrollFlags="scroll|snap|exitUntilCollapsed"
-            app:title="News Detail"
-            app:collapsedTitleTextColor="@color/grey_100">
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="280dp">
-                <ImageView
-                    android:id="@+id/img_detail"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:scaleType="fitXY"
-                    tools:src="@tools:sample/backgrounds/scenic"
-                    android:contentDescription="@string/detail_image" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
-            <com.google.android.material.appbar.MaterialToolbar
-                android:id="@+id/toolbar_detail"
-                android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize"
-                android:theme="?attr/actionBarTheme"
-                app:layout_collapseMode="pin"
-                app:menu="@menu/topbar_detail"/>
-        </com.google.android.material.appbar.CollapsingToolbarLayout>
+            android:minHeight="?attr/actionBarSize"
+            android:paddingStart="16dp"
+            tools:ignore="RtlSymmetry"
+            app:menu="@menu/topbar_detail"
+            app:title="News"/>
     </com.google.android.material.appbar.AppBarLayout>
 
     <androidx.core.widget.NestedScrollView
         android:id="@+id/nested_scroll_view_detail"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="-20dp"
         app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/card_detail"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:clipToPadding="false"
-            android:background="@color/grey_100"
-            app:cardCornerRadius="20dp">
-
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:padding="16dp"
-                tools:layout_editor_absoluteX="-36dp"
+                android:paddingHorizontal="16dp"
                 android:background="@color/grey_100">
-
-                <Button
-                    android:id="@+id/save_btn"
-                    android:layout_width="100dp"
-                    android:layout_height="48dp"
-                    android:background="@drawable/save_btn_bg"
-                    android:text="@string/save"
-                    android:textColor="@color/grey_100"
-                    android:textSize="13sp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"/>
-
-
-
                 <TextView
                     android:id="@+id/detail_source"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/blue_800"
-                    android:textSize="18sp"
-                    app:layout_constraintTop_toBottomOf="@+id/save_btn"
+                    app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    android:layout_marginTop="30dp"
+                    android:layout_marginTop="5dp"
+                    android:theme="@style/textAppearanceDetailSource"
                     tools:text="viva.com"/>
 
                 <TextView
@@ -95,13 +49,11 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/bg_title"
-                    tools:text="Effendi Simbolon: Laksamana Yudo Sederhana, Tak Punya Ambisi Politik"
+                    tools:text="Ini Judul Detail Berita"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/detail_source"
-                    android:textColor="@color/grey_dark_primary"
-                    android:textSize="22sp"
-                    android:textStyle="bold"
+                    android:theme="@style/textAppearanceTitleDetail"
                     android:paddingStart="7dp"
                     android:layout_marginTop="15dp"
                     tools:ignore="RtlSymmetry"/>
@@ -110,38 +62,50 @@
                     android:id="@+id/tv_by"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/secondary_text"
-                    android:textSize="15sp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/detail_title"
                     android:layout_marginTop="10dp"
+                    android:theme="@style/textAppearanceAuthor"
                     android:text="@string/by"/>
 
                 <TextView
                     android:id="@+id/detail_author"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/secondary_text"
-                    android:textSize="15sp"
                     app:layout_constraintStart_toEndOf="@id/tv_by"
                     app:layout_constraintTop_toBottomOf="@id/detail_title"
                     android:layout_marginTop="10dp"
                     android:layout_marginStart="5dp"
+                    android:theme="@style/textAppearanceAuthor"
                     tools:text="Daffa Ucuy ramadhan"/>
+                
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/image_card"
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    android:elevation="0dp"
+                    app:layout_constraintTop_toBottomOf="@id/detail_author"
+                    android:layout_marginTop="20dp"
+                    app:cardCornerRadius="10dp">
+                    <ImageView
+                        android:id="@+id/img_detail"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="fitXY"
+                        tools:src="@tools:sample/backgrounds/scenic"
+                        android:contentDescription="@string/detail_image"/>
+                </com.google.android.material.card.MaterialCardView>
 
                 <TextView
                     android:id="@+id/detail_content"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="15sp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/detail_author"
-                    android:textColor="@color/body_text"
+                    app:layout_constraintTop_toBottomOf="@id/image_card"
                     tools:text="@tools:sample/lorem/random"
                     android:layout_marginTop="20dp"
-                    android:lineSpacingExtra="3sp"/>
+                    android:theme="@style/textAppearanceBodyText"/>
             </androidx.constraintlayout.widget.ConstraintLayout>
-        </com.google.android.material.card.MaterialCardView>
     </androidx.core.widget.NestedScrollView>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
