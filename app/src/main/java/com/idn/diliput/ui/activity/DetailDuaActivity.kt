@@ -14,13 +14,15 @@ class DetailDuaActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         _binding = ActivityDetailDuaBinding.inflate(layoutInflater)
+        setSupportActionBar(binding.toolbarDetailDua)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
         setContentView(binding.root)
 
         var news = intent.getParcelableExtra<ArticlesItem>(TAB_DATA)
         news?.let {
             binding.apply {
                 detailSource.text = news.source?.name
-                detailAuthor.text = news.content
+                detailAuthor.text = news.author
                 detailTitle.text = news.title
                 detailContent.text = news.content
 
@@ -32,5 +34,9 @@ class DetailDuaActivity : AppCompatActivity() {
 
     companion object{
         var TAB_DATA = "TAB"
+    }
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return super.onSupportNavigateUp()
     }
 }

@@ -7,21 +7,23 @@
     android:background="@color/grey_100"
     tools:context=".ui.activity.DetailActivity"
     android:fitsSystemWindows="true">
+
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/grey_100"
         app:liftOnScroll="true"
-        app:liftOnScrollTargetViewId="@id/rv_bookmark">
+        app:liftOnScrollTargetViewId="@id/detail_content">
         <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar_detail_dua"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:minHeight="?attr/actionBarSize"
-            android:paddingStart="16dp"
             tools:ignore="RtlSymmetry"
-            app:menu="@menu/topbar_detail"
-            app:title="News"/>
+            app:navigationIcon="@drawable/ic_back"
+            app:title="News"
+            app:titleCentered="true"/>
     </com.google.android.material.appbar.AppBarLayout>
 
     <androidx.core.widget.NestedScrollView
@@ -31,7 +33,7 @@
         app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:paddingHorizontal="16dp"
             android:background="@color/grey_100">
             <TextView
@@ -50,12 +52,12 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/bg_title"
                 tools:text="Ini Judul Detail Berita"
-                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/detail_source"
                 android:theme="@style/textAppearanceTitleDetail"
                 android:paddingStart="7dp"
                 android:layout_marginTop="15dp"
+                android:layout_marginBottom="6dp"
                 tools:ignore="RtlSymmetry"/>
 
             <TextView
@@ -78,7 +80,6 @@
                 android:layout_marginStart="5dp"
                 android:theme="@style/textAppearanceAuthor"
                 tools:text="Daffa Ucuy ramadhan"/>
-
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/image_card"
                 android:layout_width="match_parent"
@@ -90,12 +91,11 @@
                 <ImageView
                     android:id="@+id/img_detail"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:scaleType="fitXY"
                     tools:src="@tools:sample/backgrounds/scenic"
                     android:contentDescription="@string/detail_image"/>
             </com.google.android.material.card.MaterialCardView>
-
             <TextView
                 android:id="@+id/detail_content"
                 android:layout_width="wrap_content"
