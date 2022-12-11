@@ -35,5 +35,8 @@ class NewsAdapter(private val listNews: ArrayList<ArticlesItem>) :
 
     }
 
+    fun getNewsAt(position: Int) = listNews[position]
+
+
     override fun getItemCount(): Int = listNews.size
 }

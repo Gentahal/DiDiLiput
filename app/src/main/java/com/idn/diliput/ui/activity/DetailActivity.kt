@@ -47,6 +47,10 @@ class DetailActivity : AppCompatActivity() {
         }
     }
 
+    private fun bookmark() {
+
+    }
+
     companion object {
         var NEWS_DATA = "DATA"
     }

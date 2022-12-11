@@ -2,6 +2,7 @@ package com.idn.diliput.response
 
 import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
+import com.idn.diliput.entity.NewsEntity
 import kotlinx.android.parcel.Parcelize
 
 @Parcelize
@@ -36,14 +37,22 @@ data class ArticlesItem(
 	val source: Source? = null,
 
 	@field:SerializedName("title")
-	val title: String? = null,
+	val title: String,
 
 	@field:SerializedName("url")
 	val url: String? = null,
 
 	@field:SerializedName("content")
 	val content: String? = null
-) : Parcelable
+) : Parcelable {
+	fun asNewsEntity() = NewsEntity(
+		title = title,
+		author = author,
+		urlToImage = urlToImage,
+		content = content,
+		name = source?.name
+	)
+}
 
 @Parcelize
 data class Source(
