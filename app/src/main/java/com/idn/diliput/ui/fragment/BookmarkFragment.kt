@@ -78,7 +78,6 @@ class BookmarkFragment : Fragment() {
                 val deleteBook = newsAdapter?.getNewsAt(viewHolder.adapterPosition)
                 CoroutineScope(Dispatchers.IO).launch {
                     deleteBook?.let { deleteBook }
-                    Toast.makeText(activity?.applicationContext, "Catatan dihapus", Toast.LENGTH_LONG).show()
                 }
             }
 
