@@ -20,11 +20,11 @@
         <!-- Text Size -->
         <item name="android:textSize">12dp</item>
         <!-- Query Text Color -->
-        <item name="android:textColorPrimary">@color/white</item>
+        <item name="android:textColorPrimary">@color/grey_dark_primary</item>
         <!-- Hint Color -->
-        <item name="android:textColorHint">@color/white</item>
+        <item name="android:textColorHint">@color/grey_400</item>
         <!-- Icon Color -->
-        <item name="android:tint">@color/white</item>
+        <item name="android:tint">@color/grey_dark_primary</item>
     </style>
 
     <style name="ExpandedBarTextStyle">
