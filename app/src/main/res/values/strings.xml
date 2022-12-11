@@ -15,4 +15,6 @@
     <string name="logo">logo</string>
     <string name="Tabbar">Tabbar Home</string>
     <string name="search_news">Search News</string>
+    <string name="txt_bookmark_removed">bookmark has removed</string>
+    <string name="txt_bookmark_added">finish add bookmark</string>
 </resources>

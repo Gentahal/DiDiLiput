@@ -34,6 +34,7 @@
             android:layout_height="match_parent"
             android:paddingHorizontal="16dp"
             android:background="@color/grey_100">
+
             <TextView
                 android:id="@+id/detail_source"
                 android:layout_width="wrap_content"
@@ -46,17 +47,17 @@
 
             <TextView
                 android:id="@+id/detail_title"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
                 android:background="@drawable/bg_title"
-                tools:text="Ini Judul Detail Berita"
+                android:paddingStart="7dp"
+                android:theme="@style/textAppearanceTitleDetail"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/detail_source"
-                android:theme="@style/textAppearanceTitleDetail"
-                android:paddingStart="7dp"
-                android:layout_marginTop="15dp"
-                tools:ignore="RtlSymmetry"/>
+                tools:ignore="RtlSymmetry"
+                tools:text="Ini Judul Detail Berita" />
 
             <TextView
                 android:id="@+id/tv_by"
@@ -78,6 +79,18 @@
                 android:layout_marginStart="5dp"
                 android:theme="@style/textAppearanceAuthor"
                 tools:text="Daffa Ucuy ramadhan"/>
+
+            <ImageButton
+                android:id="@+id/btn_bookmark"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_bookmark_border"
+                android:background="@android:color/transparent"
+                app:layout_constraintBottom_toBottomOf="@+id/detail_author"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/detail_author"
+                app:layout_constraintTop_toTopOf="@id/detail_author"
+                app:tint="@color/grey_400" />
 
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/image_card"

@@ -1,14 +1,18 @@
 package com.idn.diliput.viewmodel
 
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
+import android.app.Application
+import androidx.lifecycle.*
 import com.idn.diliput.network.tabbar.ApiClient
 import com.idn.diliput.response.ArticlesItem
 import com.idn.diliput.response.DataResponse
+import com.idn.diliput.response.ResultsItem
+import com.idn.diliput.room.NewsDatabase
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import io.reactivex.rxjava3.schedulers.Schedulers
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
-class TabBarViewModel : ViewModel() {
+class TabBarViewModel(application: Application) : AndroidViewModel(application) {
     val listData = MutableLiveData<List<ArticlesItem>>()
 
     val isLoading = MutableLiveData<Boolean>()
@@ -39,5 +43,34 @@ class TabBarViewModel : ViewModel() {
                 isError.value = it
             }
         )
+    }
+
+    //Room
+
+    private val newsDao = NewsDatabase.getDatabase(application).newsDao()
+
+
+    fun bookmarkNews(news: ArticlesItem) {
+        viewModelScope.launch(Dispatchers.IO) {
+            newsDao.insert(news.asNewsEntity())
+        }
+    }
+
+    fun unBookmarkNews(news: ArticlesItem) {
+        viewModelScope.launch(Dispatchers.IO) {
+            newsDao.delete(news.asNewsEntity())
+        }
+    }
+
+    fun isNewsBookmarked(news: ArticlesItem): LiveData<Boolean> {
+        return Transformations.map(newsDao.isBookmark(news.title as String)) {
+            it == 1
+        }
+    }
+
+    fun getAllBookmarkedNews(): LiveData<List<ArticlesItem>> {
+        return Transformations.map(newsDao.getAllData()) { list ->
+            list.map { it.asBookmarkResponse() }
+        }
     }
 }

@@ -17,7 +17,7 @@ import com.idn.diliput.response.ArticlesItem
 import com.idn.diliput.ui.activity.DetailActivity
 import com.idn.diliput.viewmodel.TabBarViewModel
 
-class FirstFragment(val category: String) : Fragment() {
+class FirstFragment(private val category: String) : Fragment() {
 
     private var _binding : FragmentFirstBinding? = null
     private val binding get() = _binding as FragmentFirstBinding
@@ -29,7 +29,7 @@ class FirstFragment(val category: String) : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _viewModel = ViewModelProvider(this).get(TabBarViewModel::class.java)
+        _viewModel = ViewModelProvider(this)[TabBarViewModel::class.java]
         _binding = FragmentFirstBinding.inflate(inflater, container, false)
         binding.rvFirst.setOnClickListener {
             activity?.let {
