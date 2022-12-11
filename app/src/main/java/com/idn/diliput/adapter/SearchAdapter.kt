@@ -29,7 +29,7 @@ class SearchAdapter(private val listNews: ArrayList<ResultsItem>) :
             itemTitle.text = listNews[position].title
 
             if (listNews[position].imageUrl == null) {
-                itemImg.setImageResource(R.drawable.example)
+                itemImg.setImageResource(R.drawable.placeholder)
             } else {
                 Picasso.get().load(listNews[position].imageUrl).into(itemImg)
             }
