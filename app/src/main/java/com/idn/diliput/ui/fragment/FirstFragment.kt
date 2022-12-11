@@ -64,7 +64,6 @@ class FirstFragment(private val category: String) : Fragment() {
         }
     }
 
-
     private fun showError(error: Throwable?) {
         Log.e("SearchFragment", "showError: $error")
     }

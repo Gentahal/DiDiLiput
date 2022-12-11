@@ -58,6 +58,7 @@ class DetailDuaActivity : AppCompatActivity() {
                         viewModel.unBookmarkNews(data)
                         context.getString(R.string.txt_bookmark_removed)
 
+
                     } else {
                         viewModel.bookmarkNews(data)
                         context.getString(R.string.txt_bookmark_added)
