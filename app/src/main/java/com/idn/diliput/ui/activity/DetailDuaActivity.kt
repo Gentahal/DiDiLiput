@@ -25,8 +25,6 @@ class DetailDuaActivity : AppCompatActivity() {
                 detailAuthor.text = news.author
                 detailTitle.text = news.title
                 detailContent.text = news.content
-
-
                 Picasso.get().load(news.urlToImage).into(imgDetail)
             }
         }

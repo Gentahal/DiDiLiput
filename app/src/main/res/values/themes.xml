@@ -54,7 +54,6 @@
 
 
     <!-- Text Types  -->
-
     <style name="textAppearanceTopbar">
         <item name="android:fontFamily">@font/cinzeldecorative_bold</item>
         <item name="android:textStyle">bold</item>
@@ -65,7 +64,7 @@
     <style name="textAppearanceTitleDetail">
         <item name="android:fontFamily">@font/jakarta_bold</item>
         <item name="android:textColor">@color/grey_dark_primary</item>
-        <item name="android:textSize">30sp</item>
+        <item name="android:textSize">25sp</item>
     </style>
     <!--  Body Text  -->
     <style name="textAppearanceBodyText">
@@ -76,16 +75,15 @@
     </style>
     <!--  Source Detail -->
     <style name="textAppearanceDetailSource">
-        <item name="android:fontFamily">@font/jakarta_bold</item>
+        <item name="android:fontFamily">@font/jakarta_semibold</item>
         <item name="android:textColor">@color/blue_800</item>
         <item name="android:textSize">18sp</item>
-        <item name="android:textStyle">bold</item>
     </style>
 
     <style name="textAppearanceAuthor">
         <item name="android:fontFamily">@font/jakarta_medium</item>
-        <item name="android:textColor">@color/grey_dark_primary</item>
-        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/grey_400</item>
+        <item name="android:textSize">17sp</item>
     </style>
 
     <style name="textAppearanceCardSource">

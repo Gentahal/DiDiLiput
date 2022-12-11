@@ -43,19 +43,27 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 android:layout_marginTop="5dp"
-                android:theme="@style/textAppearanceDetailSource"
+                style="@style/textAppearanceDetailSource"
                 tools:text="viva.com"/>
+
+<!--            <androidx.appcompat.widget.AppCompatImageButton-->
+<!--                android:id="@+id/save_button"-->
+<!--                android:layout_width="80dp"-->
+<!--                android:layout_height="30dp"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintTop_toTopOf="parent"-->
+<!--                android:background="@drawable/save_btn_bg"-->
+<!--                android:layout_marginTop="5dp"-->
+<!--                android:text="Save"/>-->
 
             <TextView
                 android:id="@+id/detail_title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/bg_title"
                 tools:text="Ini Judul Detail Berita"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/detail_source"
-                android:theme="@style/textAppearanceTitleDetail"
-                android:paddingStart="7dp"
+                style="@style/textAppearanceTitleDetail"
                 android:layout_marginTop="15dp"
                 android:layout_marginBottom="6dp"
                 tools:ignore="RtlSymmetry"/>
@@ -67,7 +75,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/detail_title"
                 android:layout_marginTop="10dp"
-                android:theme="@style/textAppearanceAuthor"
+                style="@style/textAppearanceAuthor"
                 android:text="@string/by"/>
 
             <TextView
@@ -78,7 +86,7 @@
                 app:layout_constraintTop_toBottomOf="@id/detail_title"
                 android:layout_marginTop="10dp"
                 android:layout_marginStart="5dp"
-                android:theme="@style/textAppearanceAuthor"
+                style="@style/textAppearanceAuthor"
                 tools:text="Daffa Ucuy ramadhan"/>
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/image_card"
@@ -91,7 +99,7 @@
                 <ImageView
                     android:id="@+id/img_detail"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:scaleType="fitXY"
                     tools:src="@tools:sample/backgrounds/scenic"
                     android:contentDescription="@string/detail_image"/>
@@ -105,7 +113,7 @@
                 app:layout_constraintTop_toBottomOf="@id/image_card"
                 tools:text="@tools:sample/lorem/random"
                 android:layout_marginTop="20dp"
-                android:theme="@style/textAppearanceBodyText"/>
+                style="@style/textAppearanceBodyText"/>
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

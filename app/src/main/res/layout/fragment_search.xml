@@ -47,5 +47,11 @@
         android:scrollbarStyle="outsideOverlay"
         android:layout_marginTop="75dp"
         tools:listitem="@layout/item_news"/>
-
+    <ProgressBar
+        android:id="@+id/pb_loading"
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        tools:visibility="invisible"
+        style="@style/Widget.AppCompat.ProgressBar.Me"
+        android:layout_gravity="top|bottom|end|start"/>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
