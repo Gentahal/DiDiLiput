@@ -55,13 +55,13 @@ class SearchFragment : Fragment() {
         })
     }
 
-    private fun showLoading(isLoading: Boolean) {
+
+    private fun showLoading(isLoading : Boolean){
         binding.apply {
-            icLoading.visibility = if (isLoading) View.VISIBLE else View.GONE
+            pbLoading.visibility = if (isLoading) View.VISIBLE else View.GONE
             rvSearch.visibility = if (isLoading) View.GONE else View.VISIBLE
         }
     }
-
 
     private fun showError(error: Throwable?) {
         Log.e("SearchFragment", "showError: $error")
