@@ -15,14 +15,16 @@
         <com.google.android.material.appbar.MaterialToolbar
             android:id="@+id/toolbar_home"
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
+            android:layout_height="wrap_content"
+            android:minHeight="60dp"
             app:title="Diliput"
+            app:titleTextAppearance="@style/textAppearanceTopbar"
             app:titleCentered="true"
             app:layout_scrollFlags="scroll|enterAlways"
             app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
             android:background="@color/grey_100"
-            app:titleTextColor="@color/blue_800"/>
-
+            app:titleTextColor="@color/blue_800"
+            />
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/tab_layout"
             android:layout_width="match_parent"

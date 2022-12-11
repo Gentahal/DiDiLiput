@@ -3,6 +3,7 @@ package com.idn.diliput.ui.activity
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
+import com.google.android.material.appbar.MaterialToolbar
 import com.idn.diliput.R
 import com.idn.diliput.databinding.ActivityDetailBinding
 import com.idn.diliput.response.ArticlesItem
@@ -17,9 +18,11 @@ class DetailActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         _binding = ActivityDetailBinding.inflate(layoutInflater)
+        setSupportActionBar(binding.toolbarDetail)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
         setContentView(binding.root)
+
 
         var data = intent.getParcelableExtra<ResultsItem>(NEWS_DATA)
         data?.let {
@@ -52,5 +55,8 @@ class DetailActivity : AppCompatActivity() {
         var NEWS_DATA = "DATA"
     }
 
-
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return super.onSupportNavigateUp()
+    }
 }

@@ -13,15 +13,16 @@
         android:layout_height="wrap_content"
         android:background="@color/grey_100"
         app:liftOnScroll="true"
-        app:liftOnScrollTargetViewId="@id/rv_bookmark">
+        app:liftOnScrollTargetViewId="@id/nested_scroll_view_detail">
         <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar_detail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:minHeight="?attr/actionBarSize"
-            android:paddingStart="16dp"
             tools:ignore="RtlSymmetry"
-            app:menu="@menu/topbar_detail"
-            app:title="News"/>
+            app:navigationIcon="@drawable/ic_back"
+            app:title="News"
+            app:titleCentered="true"/>
     </com.google.android.material.appbar.AppBarLayout>
 
     <androidx.core.widget.NestedScrollView
@@ -30,8 +31,8 @@
         android:layout_height="match_parent"
         app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:paddingHorizontal="16dp"
                 android:background="@color/grey_100">
                 <TextView
@@ -41,21 +42,20 @@
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     android:layout_marginTop="5dp"
-                    android:theme="@style/textAppearanceDetailSource"
+                    style="@style/textAppearanceDetailSource"
                     tools:text="viva.com"/>
 
                 <TextView
                     android:id="@+id/detail_title"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/bg_title"
                     tools:text="Ini Judul Detail Berita"
-                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/detail_source"
-                    android:theme="@style/textAppearanceTitleDetail"
+                    style="@style/textAppearanceTitleDetail"
                     android:paddingStart="7dp"
                     android:layout_marginTop="15dp"
+                    android:layout_marginBottom="2dp"
                     tools:ignore="RtlSymmetry"/>
 
                 <TextView
@@ -65,7 +65,7 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/detail_title"
                     android:layout_marginTop="10dp"
-                    android:theme="@style/textAppearanceAuthor"
+                    style="@style/textAppearanceAuthor"
                     android:text="@string/by"/>
 
                 <TextView
@@ -76,7 +76,7 @@
                     app:layout_constraintTop_toBottomOf="@id/detail_title"
                     android:layout_marginTop="10dp"
                     android:layout_marginStart="5dp"
-                    android:theme="@style/textAppearanceAuthor"
+                    style="@style/textAppearanceAuthor"
                     tools:text="Daffa Ucuy ramadhan"/>
                 
                 <com.google.android.material.card.MaterialCardView
@@ -95,7 +95,6 @@
                         tools:src="@tools:sample/backgrounds/scenic"
                         android:contentDescription="@string/detail_image"/>
                 </com.google.android.material.card.MaterialCardView>
-
                 <TextView
                     android:id="@+id/detail_content"
                     android:layout_width="wrap_content"
@@ -105,7 +104,7 @@
                     app:layout_constraintTop_toBottomOf="@id/image_card"
                     tools:text="@tools:sample/lorem/random"
                     android:layout_marginTop="20dp"
-                    android:theme="@style/textAppearanceBodyText"/>
+                    style="@style/textAppearanceBodyText"/>
             </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
