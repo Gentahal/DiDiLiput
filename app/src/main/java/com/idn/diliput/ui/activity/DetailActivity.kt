@@ -19,10 +19,7 @@ class DetailActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         _binding = ActivityDetailBinding.inflate(layoutInflater)
-        setSupportActionBar(binding.toolbarDetail)
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
         setContentView(binding.root)
-
 
         var data = intent.getParcelableExtra<ResultsItem>(NEWS_DATA)
         data?.let {
@@ -36,7 +33,7 @@ class DetailActivity : AppCompatActivity() {
                 if (data.creator == null) {
                     detailAuthor.text = "unknown"
                 } else {
-                    detailAuthor.text = data.creator
+                    detailAuthor.text = data.creator.toString().replace("[", "").replace("]", "")
                 }
 
                 detailTitle.text = data.title

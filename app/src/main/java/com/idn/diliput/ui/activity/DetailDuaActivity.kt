@@ -30,7 +30,7 @@ class DetailDuaActivity : AppCompatActivity() {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         setContentView(binding.root)
 
-        data?.let {
+        data.let {
             binding.apply {
                 detailSource.text = data.source?.name
                 detailAuthor.text = data.author

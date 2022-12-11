@@ -24,7 +24,7 @@ class SearchAdapter(private val listNews: ArrayList<ResultsItem>) :
             if (listNews[position].creator == null) {
                 itemSource.text = "unknown"
             } else {
-                itemSource.text = listNews[position].creator.toString()
+                itemSource.text = listNews[position].creator.toString().replace("[", "").replace("]", "")
             }
             itemTitle.text = listNews[position].title
 

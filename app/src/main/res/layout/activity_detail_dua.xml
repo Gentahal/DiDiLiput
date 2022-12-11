@@ -32,13 +32,12 @@
         android:layout_height="match_parent"
         app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
 
-        <androidx.constraintlayout.motion.widget.MotionLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/constraintLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/grey_100"
-            android:paddingHorizontal="16dp"
-            app:layoutDescription="@xml/activity_detail_dua_xml_constraintlayout_scene">
+            android:paddingHorizontal="16dp">
 
             <TextView
                 android:id="@+id/detail_source"
@@ -59,7 +58,9 @@
                 android:clickable="true"
                 android:text="@string/save"
                 android:textColor="@color/grey_100"
-                android:focusable="true" />
+                android:focusable="true"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
 
             <TextView
                 android:id="@+id/detail_title"
@@ -124,6 +125,6 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/image_card"
                 tools:text="@tools:sample/lorem/random" />
-        </androidx.constraintlayout.motion.widget.MotionLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

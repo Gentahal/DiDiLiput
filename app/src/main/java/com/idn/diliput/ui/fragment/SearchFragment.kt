@@ -45,7 +45,9 @@ class SearchFragment : Fragment() {
                 newText.let {
                     viewModel.apply {
                         getDataSearch(newText)
-                        dataResponse.observe(viewLifecycleOwner) { showData(it as ArrayList<ResultsItem>) }
+                        dataResponse.observe(viewLifecycleOwner) {
+                            showData(it as ArrayList<ResultsItem>)
+                        }
                         isLoading.observe(viewLifecycleOwner) { showLoading(it) }
                         isError.observe(viewLifecycleOwner) { showError(it) }
                     }
@@ -58,7 +60,7 @@ class SearchFragment : Fragment() {
 
     private fun showLoading(isLoading : Boolean){
         binding.apply {
-            pbLoading.visibility = if (isLoading) View.VISIBLE else View.GONE
+            icLoading.visibility = if (isLoading) View.VISIBLE else View.GONE
             rvSearch.visibility = if (isLoading) View.GONE else View.VISIBLE
         }
     }

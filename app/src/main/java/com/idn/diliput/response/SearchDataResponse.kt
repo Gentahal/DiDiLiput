@@ -27,7 +27,7 @@ data class ResultsItem(
 	val country: List<String?>? = null,
 
 	@field:SerializedName("creator")
-	val creator: String? = null,
+	val creator: List<String>? = null,
 
 	@field:SerializedName("keywords")
 	val keywords: List<String>? = null,
