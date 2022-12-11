@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import com.idn.diliput.R
 import com.idn.diliput.databinding.ActivityDetailBinding
+import com.idn.diliput.response.ArticlesItem
 import com.idn.diliput.response.ResultsItem
 import com.idn.diliput.response.SearchDataResponse
 import com.squareup.picasso.Picasso
@@ -46,4 +47,6 @@ class DetailActivity : AppCompatActivity() {
     companion object {
         var NEWS_DATA = "DATA"
     }
+
+
 }

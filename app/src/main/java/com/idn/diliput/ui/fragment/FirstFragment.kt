@@ -1,19 +1,20 @@
 package com.idn.diliput.ui.fragment
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.widget.SearchView
-import androidx.lifecycle.LiveData
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
-import com.idn.diliput.R
 import com.idn.diliput.adapter.NewsAdapter
+import com.idn.diliput.adapter.ViewPagerAdapter
 import com.idn.diliput.databinding.FragmentFirstBinding
 import com.idn.diliput.response.ArticlesItem
+import com.idn.diliput.ui.activity.DetailActivity
 import com.idn.diliput.viewmodel.TabBarViewModel
 
 class FirstFragment(val category: String) : Fragment() {
@@ -30,6 +31,11 @@ class FirstFragment(val category: String) : Fragment() {
     ): View? {
         _viewModel = ViewModelProvider(this).get(TabBarViewModel::class.java)
         _binding = FragmentFirstBinding.inflate(inflater, container, false)
+        binding.rvFirst.setOnClickListener {
+            activity?.let {
+                startActivity(Intent(context, DetailActivity::class.java))
+            }
+        }
         return binding.root
     }
 
@@ -41,7 +47,6 @@ class FirstFragment(val category: String) : Fragment() {
             isError.observe(viewLifecycleOwner) {showError(it)}
         }
     }
-
 
 
 

@@ -1,10 +1,13 @@
 package com.idn.diliput.adapter
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.idn.diliput.databinding.ItemNewsBinding
 import com.idn.diliput.response.ArticlesItem
+import com.idn.diliput.ui.activity.DetailActivity
+import com.idn.diliput.ui.activity.DetailDuaActivity
 import com.squareup.picasso.Picasso
 
 class NewsAdapter(private val listNews: ArrayList<ArticlesItem>) :
@@ -22,6 +25,12 @@ class NewsAdapter(private val listNews: ArrayList<ArticlesItem>) :
             itemTitle.text = listNews[position].title
 
             Picasso.get().load(listNews[position].urlToImage).into(itemImg)
+        }
+
+        holder.itemView.setOnClickListener {
+            val intent = Intent(it.context,DetailDuaActivity::class.java)
+            intent.putExtra(DetailDuaActivity.TAB_DATA, listNews[position])
+            it.context.startActivity(intent)
         }
 
     }
