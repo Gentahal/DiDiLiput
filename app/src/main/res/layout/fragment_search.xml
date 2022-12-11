@@ -45,7 +45,17 @@
         android:layout_height="wrap_content"
         android:id="@+id/rv_search"
         android:scrollbarStyle="outsideOverlay"
+        android:visibility="visible"
         android:layout_marginTop="75dp"
         tools:listitem="@layout/item_news"/>
+
+    <ProgressBar
+        android:id="@+id/ic_loading"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginHorizontal="170dp"
+        tools:visibility="gone"
+        android:layout_marginTop="75dp"
+        style="@style/Widget.AppCompat.ProgressBar"/>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

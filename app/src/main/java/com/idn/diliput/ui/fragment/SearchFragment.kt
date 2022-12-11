@@ -38,16 +38,15 @@ class SearchFragment : Fragment() {
         binding.searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
                 viewModel.getDataSearch(query)
-
                 return false
             }
 
             override fun onQueryTextChange(newText: String?): Boolean {
-
                 newText.let {
                     viewModel.apply {
                         getDataSearch(newText)
                         dataResponse.observe(viewLifecycleOwner) { showData(it as ArrayList<ResultsItem>) }
+                        isLoading.observe(viewLifecycleOwner) { showLoading(it) }
                         isError.observe(viewLifecycleOwner) { showError(it) }
                     }
                 }
@@ -55,6 +54,14 @@ class SearchFragment : Fragment() {
             }
         })
     }
+
+    private fun showLoading(isLoading: Boolean) {
+        binding.apply {
+            icLoading.visibility = if (isLoading) View.VISIBLE else View.GONE
+            rvSearch.visibility = if (isLoading) View.GONE else View.VISIBLE
+        }
+    }
+
 
     private fun showError(error: Throwable?) {
         Log.e("SearchFragment", "showError: $error")
