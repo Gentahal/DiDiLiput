@@ -23,6 +23,7 @@
             tools:ignore="RtlSymmetry"
             app:navigationIcon="@drawable/ic_back"
             app:title="News"
+            app:titleTextColor="@color/grey_dark_primary"
             app:titleCentered="true"/>
     </com.google.android.material.appbar.AppBarLayout>
 
