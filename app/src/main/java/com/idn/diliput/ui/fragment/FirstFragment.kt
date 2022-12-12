@@ -71,8 +71,10 @@ class FirstFragment(private val category: String) : Fragment() {
 
     private fun showHeadline(data: ArrayList<ArticlesItem>) {
         binding.rvFirst.apply {
+            val newsAdapter = NewsAdapter()
+            newsAdapter.setData(data)
             layoutManager = GridLayoutManager(context, 1, GridLayoutManager.VERTICAL, false)
-            adapter = NewsAdapter(data)
+            adapter = newsAdapter
         }
     }
 

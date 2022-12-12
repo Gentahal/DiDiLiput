@@ -3,6 +3,7 @@ package com.idn.diliput.adapter
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.idn.diliput.databinding.ItemNewsBinding
 import com.idn.diliput.response.ArticlesItem
@@ -10,8 +11,10 @@ import com.idn.diliput.ui.activity.DetailActivity
 import com.idn.diliput.ui.activity.DetailDuaActivity
 import com.squareup.picasso.Picasso
 
-class NewsAdapter(private val listNews: ArrayList<ArticlesItem>) :
+class NewsAdapter :
     RecyclerView.Adapter<NewsAdapter.MyViewHolder>() {
+
+    private val listNews: ArrayList<ArticlesItem> = arrayListOf()
 
     class MyViewHolder(val binding: ItemNewsBinding) : RecyclerView.ViewHolder(binding.root)
 
@@ -39,4 +42,12 @@ class NewsAdapter(private val listNews: ArrayList<ArticlesItem>) :
 
 
     override fun getItemCount(): Int = listNews.size
+
+    fun setData(list: List<ArticlesItem>) {
+        val alarmDiffUtil = NewsDiffUtil(listNews,list)
+        val alarmDiffUtilResult = DiffUtil.calculateDiff(alarmDiffUtil)
+        listNews.clear()
+        listNews.addAll(list)
+        alarmDiffUtilResult.dispatchUpdatesTo(this)
+    }
 }
