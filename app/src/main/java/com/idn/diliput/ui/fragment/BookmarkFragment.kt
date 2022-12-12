@@ -1,24 +1,19 @@
 package com.idn.diliput.ui.fragment
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.get
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.RecyclerView
-import com.idn.diliput.R
 import com.idn.diliput.adapter.NewsAdapter
 import com.idn.diliput.databinding.FragmentBookmarkBinding
 import com.idn.diliput.response.ArticlesItem
 import com.idn.diliput.viewmodel.TabBarViewModel
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
 
 class BookmarkFragment : Fragment() {
 
@@ -42,7 +37,7 @@ class BookmarkFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
+        newsAdapter = NewsAdapter()
         showData()
 
     }
@@ -51,8 +46,9 @@ class BookmarkFragment : Fragment() {
         viewModel.apply {
             getAllBookmarkedNews().observe(viewLifecycleOwner) { data ->
                 data?.let {
+                    newsAdapter?.setData(data)
                     binding.rvBookmark.apply {
-                        adapter = NewsAdapter(data as ArrayList<ArticlesItem>)
+                        adapter = newsAdapter
                         layoutManager = GridLayoutManager(context, 1, GridLayoutManager.VERTICAL, false)
                         swipeToDelete(this)
                     }
@@ -76,8 +72,9 @@ class BookmarkFragment : Fragment() {
 
             override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
                 val deleteBook = newsAdapter?.getNewsAt(viewHolder.adapterPosition)
-                CoroutineScope(Dispatchers.IO).launch {
-                    deleteBook?.let { deleteBook }
+                Log.i("BookmarkFragment", "onSwiped: $deleteBook")
+                deleteBook?.let {
+                    viewModel.unBookmarkNews(deleteBook)
                 }
             }
 
