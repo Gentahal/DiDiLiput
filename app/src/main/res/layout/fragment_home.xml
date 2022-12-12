@@ -23,7 +23,6 @@
             app:layout_scrollFlags="scroll|enterAlways"
             app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
             android:background="@color/grey_100"
-            app:titleTextColor="@color/blue_800"
             />
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/tab_layout"

@@ -6,7 +6,7 @@
         <item name="colorOnPrimary">@color/grey_dark_primary</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/blue_800</item>
-        <item name="colorSecondaryVariant">@color/teal_700</item>
+        <item name="colorSecondaryVariant">@color/grey_100</item>
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor">@color/grey_100</item>
@@ -60,6 +60,7 @@
         <item name="android:fontFamily">@font/cinzeldecorative_bold</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textSize">25sp</item>
+        <item name="android:textColor">@color/blue_800</item>
     </style>
 
     <!--  title  -->
